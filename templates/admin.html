@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Admin Home {% endblock %}
+
+{% block body %}
+    <h2>This is admin home page</h2>
+    <div><a href="{% url 'add-app' %}" class="btn btn-primary">Add App</a></div>
+    <div id="applist">
+        <div>
+            <app-detail></app-detail>
+        </div>
+    </div>
+{% endblock %}
+                    

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ user.first_name }}'s Home {% endblock %}
+
+{% block body %}
+<div id="userview">
+    <div class="row" id="fix_navbar">
+        <nav>
+            <ul>
+                <li><router-link to="/"><h3>Dashboard</h3></router-link></li>
+                <li><router-link to="/summary"><h3>Summary</h3></router-link></li>
+                <li><router-link to="/about"><h3>About</h3></router-link></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="row"  id="dash_row">
+        <div class="col"  id="dash_col">
+            <router-view></router-view>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

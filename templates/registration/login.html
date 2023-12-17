@@ -1,0 +1,38 @@
+{% extends 'index.html'%}
+
+{% block title %} Login {% endblock %}
+
+{% block body %}
+<div class="jumbotron text-center" style="background-color: #3498db; color: #fff; padding: 50px; border-radius: 30px">
+    <h1>Welcome back! To Our Awesome Platform!!!</h1>
+    <h5>Unlock amazing features by registering or logging in</h5>
+</div>
+
+    <div class="login-container">
+        <h2>Wooh! We remember you </h2>
+
+        {% if form.errors %}
+            <p class="error-message">Your username and password don't match. Please try again.</p>
+        {% endif %}
+
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <!-- Username Field -->
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username</label>
+                {{ form.username }}
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}">Create a Password</label>
+                {{ form.password }}
+            </div>
+
+            <button type="submit" class="login-button">Login</button>
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+
+        <p class="signup-link">Don't have an account? <a href="{% url 'register' %}">Sign up here</a>.</p>
+    </div>
+{% endblock %}

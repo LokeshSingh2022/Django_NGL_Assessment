@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+    <div class="jumbotron text-center" style="background-color: #3498db; color: #fff; padding: 50px; border-radius: 30px">
+        <h1>Welcome to Our Awesome Platform!!!</h1>
+        <h5>Unlock amazing features by registering or logging in</h5>
+        <div class="mt-4">
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg mr-3">Register</a>
+            <a href="{% url 'login' %}" class="btn btn-success btn-lg">Login</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2>About Our Platform</h2>
+        <p>
+            Welcome to our innovative platform where you can explore a world of exciting apps and earn points for your activities!
+        </p>
+        <p>
+            Our platform consists of two main components: one for administrators and another for users. Administrators have the ability to add Android apps and allocate points for user downloads, while users can view added apps, check their points, and complete tasks.
+        </p>
+
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Exposed REST API with proper permissions, authentication, and documentation.</li>
+            <li>Admin-facing section to add Android apps and allocate points.</li>
+            <li>User-facing section with features like signup, login, profile viewing, earned points, completed tasks, and screenshot upload.</li>
+        </ul>
+
+        <p>
+            Ready to explore? Register or log in now to access these amazing features!
+        </p>
+    </div>
+{% endblock %}

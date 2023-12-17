@@ -1,0 +1,58 @@
+{% if user.is_authenticated %}
+<article class="loged_sidebar">
+    <aside class="sidebar">
+        <div class="user-details">
+            <h1 class="welcome-header">Welcome Back,</h1>
+            <h4>{{user.first_name}} {{user.last_name}}</h4>
+            <div class="username-info">
+                <h6 id="username" data-value="{{ user.username }}">{{ user.email }}</h6>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <a href="{% url 'logout' %}" class="btn btn-primary">
+                <i class="fas fa-sign-in-alt"></i> Logout
+            </a>
+        </div>
+    </aside>
+</article>
+
+<footer class="contact-footer">
+    <div>
+        Contact Us
+        lokeshrajwar23@gmail.com
+        Project Link: <a href="https://github.com/LokeshRajwar">Open</a>
+    </div>
+</footer>
+
+{% else %}
+
+<article class="non-authenticated">
+    <div class="content-wrapper">
+        <h2>Explore and Earn!</h2>
+        <p>Discover exciting Android apps, complete tasks, and earn points to unlock amazing rewards.</p>
+        <p>Get started in seconds by registering below. It's free!</p>
+        <div class="action-buttons">
+            <a href="{% url 'login' %}" class="btn btn-primary">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+            <span class="separator">or</span>
+            <a href="{% url 'register' %}" class="btn btn-success">
+                <i class="fas fa-user-plus"></i> Register
+            </a>
+            <p>--------------------------</p>
+            <span class="separator"></span>
+            <a href="{% url 'home' %}" class="btn btn-info">
+                <i class="fas fa-user-plus"></i> Home
+            </a>
+        </div>
+    </div>
+</article>
+<footer class="contact-footer">
+    <div>
+        Contact Us
+        lokeshrajwar23@gmail.com
+        Project Link: <a href="https://github.com/LokeshRajwar">Open</a>
+    </div>
+</footer>
+
+{% endif %}

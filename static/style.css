@@ -1,0 +1,202 @@
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #D6E4f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 30px;
+}
+
+#main_sidebar {
+    color: white;
+    background-color: #851D41;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.loged_sidebar, .non-authenticated {
+    flex: 1;
+    margin-bottom: 20px; /* Adjust the margin to create space between content and footer */
+}
+
+.contact-footer {
+    background: #000000;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+/* Home & login page */
+#main_bar, #token{
+    margin: 0;
+    padding: 20px;
+}
+#jumbotron{
+    background-color: #1d8522;
+    color: white;
+    border-radius: 30px;
+    text-align: left;
+}
+
+/* inside side bar */
+article {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+}
+footer {
+    border-top: solid 1px;
+    background: #e68911;
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+    position: relative;
+    text-align: center;
+}
+
+/* vue installation */
+#userview {
+    height: 100vh;
+    margin: 0;
+}
+
+/* Navbar with vue router link */
+#fix_navbar {
+    background-color: #851D41;
+    left: 0;
+    right: 0;
+    height: 10%;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+    border-radius: 10px;
+    }
+
+nav * {
+    display: inline;
+    }
+    
+nav li {
+    margin: 20px;
+    }
+    
+nav li a {
+    color: white;
+    text-decoration: none;
+    }
+
+nav li a:hover {
+        color: #163172;
+    }
+
+/* Form border */
+#border {
+    border: 10px solid grey;
+    box-sizing: border-box;
+    background: rgba(172, 106, 106, 0.5);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }  
+
+  th {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    background-color: black;
+    color: lightgreen;
+  }
+  
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: lightblue;
+  }
+
+
+
+
+/* Login Form */
+.waper{
+    max-width: 350px;
+    margin:50px auto;
+    background:#FFFFFF;
+	min-height:207px;
+}
+
+.head{
+   background-color: #5891ff;
+   padding:10px 10px 10px 10px;
+   color:#FFFFFF;
+   font:Geneva, Arial, Helvetica, sans-serif;
+   font-size:20px;
+   text-align: center;
+}
+
+.foc{
+   margin:10px 10px 10px 10px;
+}
+
+
+.styled-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+small {
+    color: #888;
+    font-style: italic;
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #888;
+}

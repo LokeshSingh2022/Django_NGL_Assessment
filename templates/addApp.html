@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Add app {% endblock %}
+
+{% block body %}
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="link">Link:</label>
+        <input type="text" name="link" id="link">
+        <br>
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category">
+        <br>
+        <label for="subcategory">Subcategory:</label>
+        <input type="text" name="subcategory" id="subcategory">
+        <br>
+        <label for="points">Points:</label>
+        <input type="number" name="points" id="points">
+        <br>
+        <label for="logo">Logo:</label>
+        <input type="file" name="logo" id="logo">
+        <br>
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}
