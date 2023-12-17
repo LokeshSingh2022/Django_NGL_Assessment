@@ -204,10 +204,11 @@ Only an admin can add new apps to the list. A user with superuser status is cons
 
 #### Write and share a small note about your choice of system to schedule periodic tasks (such as downloading a list of ISINs every 24 hours). Why did you choose it? Is it reliable enough; Or will it scale? If not, what are the problems with it? And, what else would you recommend to fix this problem at scale in production?
 
+`
 Right now my choice would be ***Celery*** task queue along with ***Redis*** as a message broker. I chose simply because this is the one I am having hands on experience with. Even though it is not a good reason, I believe that it is better to start from where we stand. Apart from that, even though Celery is written in Python, the protocol can be implemented in any language. It can also operate with other language using weebhooks. With limited knowledge of the underlying system and requirements we are dealing here, these properties makes Celery my first choice.
 
 But poor suport and maintainance is making Celery less relevent and stale. But it is said for large scale apps switching from Redis to RabbitMQ can improve the performance. On my research online Apache Airflow seems to be a better alternative, need to test it before arriving at a conclusion.
-
+`
 
 #### In what circumstances would you use Flask instead of Django and vice versa?
 
