@@ -17,6 +17,10 @@ print(numbers)
 
 ```
 
+``` output
+List:- ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '648', '649', '650', '651', '652', '653']
+```
+
 
 ## Problem Set 2
 
@@ -204,30 +208,34 @@ Only an admin can add new apps to the list. A user with superuser status is cons
 
 #### Write and share a small note about your choice of system to schedule periodic tasks (such as downloading a list of ISINs every 24 hours). Why did you choose it? Is it reliable enough; Or will it scale? If not, what are the problems with it? And, what else would you recommend to fix this problem at scale in production?
 
-Right now my choice would be ***Celery*** task queue along with ***Redis*** as a message broker. I chose simply because this is the one I am having hands on experience with. Even though it is not a good reason, I believe that it is better to start from where we stand. Apart from that, even though Celery is written in Python, the protocol can be implemented in any language. It can also operate with other language using weebhooks. With limited knowledge of the underlying system and requirements we are dealing here, these properties makes Celery my first choice.
+`
+"Currently, I'm leaning towards leveraging the Celery task queue in tandem with Redis as the message broker. Admittedly, my familiarity with this combination is a significant factor in this choice. While it might not be the most robust rationale, I believe in starting with what I know. What adds to Celery's appeal is its language-agnostic protocol, allowing implementation in any language, and its interoperability with other languages through webhooks. Given our current limited understanding of the system's intricacies and requirements, these features make Celery a pragmatic initial choice.
 
-But poor suport and maintainance is making Celery less relevent and stale. But it is said for large scale apps switching from Redis to RabbitMQ can improve the performance. On my research online Apache Airflow seems to be a better alternative, need to test it before arriving at a conclusion.
-
+However, it's essential to acknowledge that Celery has faced challenges in terms of support and maintenance, potentially affecting its relevance and freshness. Some insights suggest that, especially for large-scale applications, transitioning from Redis to RabbitMQ could enhance performance. As part of my ongoing research, Apache Airflow has emerged as a promising alternative. Further testing is necessary before drawing any definitive conclusions on its suitability for our specific needs."
+`
 
 #### In what circumstances would you use Flask instead of Django and vice versa?
 
 ##### Flask
 > `Pros`
-> - Lightweight and minimalist approach
-> - Ideal for small to medium apps
-> - Suitable for RESTful APIs and microservices
+> - Lightweight and minimalist approach.
+> - Ideal for small to medium apps.
+> - Suitable for RESTful APIs and microservices.
 > - If you want a lot of flexibility with choice of external packages used etc.
 >
 > `Cons`
-> - Lightwight and minimalist approach makes it hard for developing large-scale applications
+> - Lightwight and minimalist approach makes it hard for developing large-scale applications.
 > - There are only few in built functionality. So we have to import a lot of other packages, in turm making it heavy for large apps.
 
 ##### Django
 > `Pros`
-> - Suitable for large scale projects
-> - Rapid developement is possible
+> - Suitable for large scale projects.
+> - Rapid developement is possible.
 > - Have a lot of inbuilt functanality, reducing import of external dependencies.
 >
 > `Cons`
 > - Not suitable for smaller applications with minimal functanality.
 > - As most features are inbuilt it is waste of resource to import a better performing dependent libraries.
+
+
+>>  Project Repo Link :- <https://github.com/LokeshSingh2022/Django_NGL_Assessment>
