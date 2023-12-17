@@ -26,7 +26,7 @@ The aim of the project is to build a Django app, in which admin is able to add a
 
 ### Video demo
 
-NB: Follow this [link](https://drive.google.com/file/d/1f7bz-VrYc5_pkBDK__7u-Va4sFUJljq5/view?usp=drive_link) for a video demo of the app.
+NB: Follow this [link]() for a video demo of the app.
 
 
 ### Technologies used
