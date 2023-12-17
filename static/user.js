@@ -33,22 +33,37 @@ const store = new Vuex.Store({
 const About = Vue.component('about', {
     template: `
     <div>
-        <h2> <u>This evaluation project is done for the <b>NextGrowth Labs</b> recruitment process.</u></h2>
-        <p> The aim of the project is to build a Django app, in which admin is able to add a new app with it's details like url, category, subcategory, logo and points for download. 
-        And a user should be able to view the apps available, follow the link, earn points by saving a screen shot of the app and view points earned.
-        </br>
-        
-        <b>Technologies used</b>
-        <ul>
-            <li><b>Django </b>- Django framework is used for the app creation as it is simple and have most of the essential extensions inbuilt.</li>
-            <li><b>Django Rest Framework </b>- Used for implimenting APIs.</li>
-            <li><b>Pillow </b>- Used to process images.</li>
-            <li><b>VueJS </b>- Is used as a JavaScript framework for building UI & UX. Inside vue.js used Vuex as the state mansgement library, 
-                Vue Router as router for making it a single page application. Also used Chart.js for generating charts.</li>
-            <li><b>SQlite </b>- As the database.</li>
-            
-        </p>
-    </div>`
+    <h2><u>Welcome to the Evaluation Project!</u></h2>
+    <p>
+        This project has been created as part of the recruitment process for <b>NextGrowth Labs</b>. 
+        Our goal is to build a powerful Django app that allows administrators to add new apps with details such as URL, category, subcategory, logo, and points for download. 
+        Users can explore the available apps, follow links, earn points by submitting screenshots of downloaded apps, and view their earned points.
+    </p>
+
+    <h3>Technologies Used</h3>
+    <ul>
+        <li><b>Django:</b> The Django framework was chosen for its simplicity and built-in essential extensions.</li>
+        <li><b>Django Rest Framework:</b> Utilized for implementing APIs, ensuring seamless communication between the frontend and backend.</li>
+        <li><b>Pillow:</b> Employed for image processing, providing efficient handling of images in the application.</li>
+        <li>
+            <b>Vue.js:</b> Vue.js powers the frontend, serving as a robust JavaScript framework for building a dynamic user interface. 
+            Within Vue.js, Vuex is used for state management, Vue Router facilitates single-page application functionality, 
+            and Chart.js enhances data visualization through dynamic charts.
+        </li>
+        <li><b>SQLite:</b> Selected as the database to manage data efficiently.</li>
+    </ul>
+
+    <h3>Explore and Experience</h3>
+    <p>
+        Take a journey through the app, explore various features, and immerse yourself in a seamless user experience. 
+        Don't forget to provide valuable feedback, as I'm continually striving to join your Organization.
+    </p>
+
+    <a href="">Click here to view the Code of the project</a>
+    <a href="">Made with ❤️ by Lokesh Singh Rajwar</a>
+    
+</div>
+`
 })
 
 const Summary = Vue.component('graph', {
@@ -99,7 +114,8 @@ const Summary = Vue.component('graph', {
         const ctx0 = document.getElementById('0');
         const ctx1 = document.getElementById('1');
   
-        new Chart(ctx0, {
+        try{
+            new Chart(ctx0, {
             type: 'pie',
             data: {
                 labels: [
@@ -110,10 +126,10 @@ const Summary = Vue.component('graph', {
                     label: 'Number of apps',
                     data: [this.numberOfUserList, this.numberOfBalList],
                     backgroundColor: [
-                        'rgb(0, 255, 0)',
+                        'rgb(34, 139, 34)',
                         'rgb(153, 102, 51)'
                     ],
-                    hoverOffset: 4
+                    hoverOffset: 20
                 }]
             },
             options: {
@@ -129,6 +145,9 @@ const Summary = Vue.component('graph', {
                 }
             }
         });
+    }catch(err){
+        console.log(err)
+    }
 
         new Chart(ctx1, {
             type: 'pie',
@@ -269,7 +288,7 @@ const Dashboard = Vue.component('user-apps', {
 
     methods: {
         redirectToForm(app) {
-            url = 'http://127.0.0.1:8000/app/user/app/'+this.username+'/add/'+app
+            let url = 'http://127.0.0.1:8000/app/user/app/'+this.username+'/add/'+app
             window.location.href = url;
         }
         
@@ -314,7 +333,7 @@ var app = new Vue({
     async created() { //fetch data on login and save to vuex store
         this.$store.commit('setUsername', document.getElementById('username').getAttribute('data-value')); // ascessing login user email from sidebar.html
         
-        url = "http://localhost:8000/api/User/"+this.$store.state.username+"/apps/"
+        let url = "http://localhost:8000/api/User/"+this.$store.state.username+"/apps/"
         
         await fetch(url, {headers: {'Content-Type': 'application/json'} } ) //Fetching current user details from database
         .then(response => response.json())
