@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Apps
 
@@ -26,3 +26,14 @@ def add_app(request):
         app_obj.save()
         return render(request, 'admin.html')
     return render(request, 'addApp.html')
+
+# function to delete an existing app from the list
+def delete_app(request):
+    if request.method == 'POST':
+        app_name = request.POST.get('app_name')  # Retrieve app name from the form
+        try:
+            app_to_delete = Apps.objects.get(name=app_name)
+            app_to_delete.delete()
+            return render(request, 'admin.html')  # Redirect to the admin home page after deletion
+        except Apps.DoesNotExist:
+            return HttpResponse("No App with such name Exist !!!")

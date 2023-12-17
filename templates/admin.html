@@ -4,11 +4,20 @@
 
 {% block body %}
     <h2>This is admin home page</h2>
-    <div><a href="{% url 'add-app' %}" class="btn btn-primary">Add App</a></div>
+    <div>
+    <a href="{% url 'add-app' %}" class="btn btn-primary">Add App</a>
+    <!-- Form for entering app name to delete -->
+    <form action="{% url 'delete-app' %}" method="post" class="delete-app-form">
+        {% csrf_token %}
+        <label for="app-name">Enter App Name to Delete:</label>
+        <input type="text" id="app-name" name="app_name" required>
+        <button type="submit" class="btn btn-danger">Delete App</button>
+    </form>
+
+    </div>
     <div id="applist">
         <div>
             <app-detail></app-detail>
         </div>
     </div>
 {% endblock %}
-                    
