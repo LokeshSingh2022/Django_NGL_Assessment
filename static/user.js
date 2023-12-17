@@ -149,7 +149,8 @@ const Summary = Vue.component('graph', {
         console.log(err)
     }
 
-        new Chart(ctx1, {
+        try{
+            new Chart(ctx1, {
             type: 'pie',
             data: {
                 labels: [
@@ -179,6 +180,9 @@ const Summary = Vue.component('graph', {
                 }
             }
         });
+    }catch(error){
+        console.log(error)
+    }
 
 
         
@@ -216,7 +220,7 @@ const Dashboard = Vue.component('user-apps', {
         </div>
 
         <div class="col-md-6 border">
-            <h3> These are Pendinging Apps worth {{sumOfBalPoints}} points.</h3>
+            <h3> These are Pending Apps worth {{sumOfBalPoints}} points. Explore these too...!</h3>
             <table>
                 <thead>
                 <tr>
@@ -293,7 +297,7 @@ const Dashboard = Vue.component('user-apps', {
         }
         
     }
-})  
+})
 
 const routes = [
     {
