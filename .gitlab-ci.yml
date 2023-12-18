@@ -1,18 +1,17 @@
-image: python:3.8
+image: python:3.6
 
 stages:
     - build
-    - test
     - deploy
 
 build:
-  before_script:
-  - apt-get update -qy
-  - apt-get install -y python3 python3-pip
-  - pip3 install -r requirements.txt
+  stage: build
+    - apt-get update -qy
+    - apt-get install -y python3 python3-pip
+    - pip3 install -r requirements.txt
 
 test:
-  script:
-  - pip3 manage.py makemigrations
-  - pip3 manage.py migrate
-  - pip3 manage.py runserver
+  script: deploy
+    - pip3 manage.py makemigrations
+    - pip3 manage.py migrate
+    - pip3 manage.py runserver
