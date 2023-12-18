@@ -1,0 +1,5 @@
+.env
+db.sqlite
+static
+README.md
+requirements.txt
