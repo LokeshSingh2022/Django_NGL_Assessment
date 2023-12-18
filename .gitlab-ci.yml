@@ -15,7 +15,4 @@ test:
   script:
   - pip3 manage.py makemigrations
   - pip3 manage.py migrate
-
-deploy:
-  script:
   - pip3 manage.py runserver
