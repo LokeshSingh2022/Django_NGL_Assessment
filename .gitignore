@@ -1,5 +1,4 @@
-.env
-db.sqlite
-static
+venv/
+db.sqlite3
 README.md
 requirements.txt
